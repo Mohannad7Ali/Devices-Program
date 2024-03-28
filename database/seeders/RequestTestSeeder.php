@@ -18,17 +18,30 @@ class RequestTestSeeder extends Seeder
             'client_name' => 'Mohannad Ali',
             'location' => 'syria',
             'phone' => '0980663670',
+            'request_type'=>'صيانة' ,
+            'value_type'=> 2 ,
+            'device_id' => '1',
+            'price' => 0,
+            'appointment_accept'    => '1' ,
+            'status'    => false,
             'category' => 'مكيفات',
             'device' => ' جداري مكيف',
             'request_type' => 'طلب صيانة',
         ]);
         \App\Models\ClientsRequest::create([
-            'client_name' => 'Roaa mostafa',
+            'client_name' => 'any thing',
             'location' => 'syria',
             'phone' => '0980663670',
+            'request_type'=>'صيانة' ,
+            'value_type'=> 2 ,
+            'device_id' => '1',
+            'price' => 0,
+            'appointment_accept'    => '1' ,
+            'status'    => false,
             'category' => 'مكيفات',
             'device' => ' جداري مكيف',
             'request_type' => 'طلب صيانة',
         ]);
+
     }
 }

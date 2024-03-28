@@ -17,15 +17,15 @@ return new class extends Migration
             $table->string('phone');
             $table->string('location');
             $table->string('request_type');
-            $table->string('value_type');
+            $table->integer('Request_type_value')->enum([0 , 1 ]);
             $table->string('device_id');
             $table->string('category')->nullable();
             $table->string('device')->nullable();
             $table->decimal('price' , 8 , 2)->nullable() ;
             $table->date('date')->nullable();
             $table->string('time')->nullable();
-            $table->boolean('appointment_accept')->default(false);
-            $table->boolean('status')->default(0);
+            $table->boolean('client_accept')->default(0);
+            $table->boolean('request_status')->default(0);
             $table->timestamps();
         });
     }

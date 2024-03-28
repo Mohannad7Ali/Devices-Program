@@ -15,8 +15,38 @@
 				<!-- breadcrumb -->
 @endsection
 @section('content')
-@include('Dashboard.messages_alert')
 
+@if (session()->has('add'))
+<script>
+    window.onload = function() {
+        notif({
+            msg: "تم تحديث حالة الدفع بنجاح",
+            type: "success"
+        })
+    }
+</script>
+@endif
+
+@if (session()->has('restore_invoice'))
+<script>
+    window.onload = function() {
+        notif({
+            msg: "تم استعادة الفاتورة بنجاح",
+            type: "success"
+        })
+    }
+</script>
+@endif
+@if (session()->has('archive_invoice'))
+<script>
+    window.onload = function() {
+        notif({
+            msg: "تم أرشفة الفاتورة بنجاح",
+            type: "success"
+        })
+    }
+</script>
+@endif
 
 				<!-- row -->
 				<div class="row">

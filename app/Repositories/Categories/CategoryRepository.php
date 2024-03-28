@@ -4,6 +4,7 @@ namespace App\Repositories\Categories;
 
 use App\Interfaces\Categories\CategoryRepositoryInterface;
 use App\Models\Category;
+use Symfony\Component\HttpFoundation\Session\Session;
 
 class CategoryRepository implements CategoryRepositoryInterface
 {
@@ -20,8 +21,7 @@ class CategoryRepository implements CategoryRepositoryInterface
             'name' => $request->input('name'),
             'description' => $request->input('description'),
         ]);
-        session()->flash('add');
-
+        session()->flash('add','تمت الاضافة بنجاح');
         return redirect()->route('categories.index');
     }
 

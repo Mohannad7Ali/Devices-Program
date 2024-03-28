@@ -23,9 +23,7 @@ use Symfony\Component\Routing\RequestContext;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 ################# Basic Routes ###########################
 Route::middleware('auth')->group(function () {
@@ -42,7 +40,9 @@ Route::middleware('auth')->group(function () {
 
 ################# Request Routes ###########################
 Route::middleware('auth')->group(function () {
-    Route::get('show_requests', [ClientsRequestController::class,'index'])->name('show_requests') ;
+    Route::resource('requests', ClientsRequestController::class) ;
+    Route::get('show_invoice' , [ClientsRequestController::class,'show_invoice'])->name('show_invoice') ;
+    Route::post('change_appointment' , [ClientsRequestController::class,'change_appointment'])->name('change_appointment') ;
 });
 ###########################################################
 
